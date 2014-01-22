@@ -20,10 +20,13 @@ bool Ship::isSolid() {
 
 void Ship::render()
 {
+    iConsole* c = world->getLeftSheetConsole();
     for( int i = 0; i < length; i++ )
     {
-        world->getLeftSheetConsole()->write( (isHorizontal() ? i : 0) + getX() , (!isHorizontal() ? i : 0) + getY(), 'o', baseColor);
+        c->write( (isHorizontal() ? i : 0) + getX() , (!isHorizontal() ? i : 0) + getY(), 'o', baseColor);
     }
+    
+    delete c;
 }
 
 bool Ship::collidesWith(Entity* entity)
