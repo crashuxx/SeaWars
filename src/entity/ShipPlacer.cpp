@@ -55,10 +55,13 @@ void ShipPlacer::update() {
             Y = Y - (Y + getHeight() - 14);
         }
     }
+    
+    bool colidate = checkColision();
+    baseColor = colidate ? 0x5D : 0x0E;
 
     if (world->getKeyboard()->fetch(0x0D)) {
         
-        if( !checkColision() ) {
+        if( !colidate ) {
             ShipSolid* ship = new ShipSolid(world, length, dir, X, Y);
             world->removeEntity(this);
             world->addEntity(ship);

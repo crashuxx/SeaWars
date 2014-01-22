@@ -15,7 +15,8 @@ class World
 
         void gameLoop();
 
-        iConsole* getConsole();
+        iConsole* getLeftSheetConsole();
+        iConsole* getRightSheetConsole();
         InputKeyboard* getKeyboard();
         
         iConsole* getMessageConsole();

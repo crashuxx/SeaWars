@@ -9,6 +9,7 @@
 World::World(iConsole* con) {
     console = con;
     addEntity(new ShipMenu(this));
+//    addEntity(new Message(this, "Witaj!"));
 }
 
 World::~World() {
@@ -95,8 +96,12 @@ void World::gameLoop() {
     }
 }
 
-iConsole* World::getConsole() {
+iConsole* World::getLeftSheetConsole() {
     return new IndirectConsole(console, 4, 3, 22, 14);
+}
+
+iConsole* World::getRightSheetConsole() {
+    return new IndirectConsole(console, 36, 3, 22, 14);
 }
 
 iConsole* World::getMessageConsole() {
@@ -117,9 +122,9 @@ void World::update() {
 }
 
 void World::render() {
-    std::vector<Entity*>::reverse_iterator entitiesIterator = entities.rbegin();
+    std::vector<Entity*>::iterator entitiesIterator = entities.begin();
 
-    while (entitiesIterator != entities.rend()) {
+    while (entitiesIterator != entities.end()) {
         Entity* e = (*entitiesIterator);
         e->render();
         ++entitiesIterator;

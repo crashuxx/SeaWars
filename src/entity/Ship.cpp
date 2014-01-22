@@ -22,7 +22,7 @@ void Ship::render()
 {
     for( int i = 0; i < length; i++ )
     {
-        world->getConsole()->write( (isHorizontal() ? i : 0) + getX() , (!isHorizontal() ? i : 0) + getY(), 'o', baseColor);
+        world->getLeftSheetConsole()->write( (isHorizontal() ? i : 0) + getX() , (!isHorizontal() ? i : 0) + getY(), 'o', baseColor);
     }
 }
 
