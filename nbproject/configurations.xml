@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="90">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <logicalFolder name="f2" displayName="entyty" projectFiles="true">
+        <itemPath>include/Message.h</itemPath>
+        <itemPath>include/Ship.h</itemPath>
+        <itemPath>include/ShipMenu.h</itemPath>
+        <itemPath>include/ShipPlacer.h</itemPath>
+        <itemPath>include/ShipSolid.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1" displayName="output" projectFiles="true">
+        <itemPath>include/iConsole.h</itemPath>
+      </logicalFolder>
+      <itemPath>include/Entity.h</itemPath>
+      <itemPath>include/InputKeyboard.h</itemPath>
+      <itemPath>include/world.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="f2" displayName="entity" projectFiles="true">
+        <itemPath>src/entity/Message.cpp</itemPath>
+        <itemPath>src/entity/Ship.cpp</itemPath>
+        <itemPath>src/entity/ShipMenu.cpp</itemPath>
+        <itemPath>src/entity/ShipPlacer.cpp</itemPath>
+        <itemPath>src/entity/ShipSolid.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1" displayName="output" projectFiles="true">
+        <itemPath>src/output/IndirectConsole.cpp</itemPath>
+        <itemPath>include/IndirectConsole.h</itemPath>
+        <itemPath>src/output/WindowsConsole.cpp</itemPath>
+        <itemPath>src/WindowsConsole.h</itemPath>
+      </logicalFolder>
+      <itemPath>src/Entity.cpp</itemPath>
+      <itemPath>src/InputKeyboard.cpp</itemPath>
+      <itemPath>src/main.cpp</itemPath>
+      <itemPath>src/world.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+    <itemPath>.gitignore</itemPath>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>include</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>MinGW|MinGW</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+        </ccTool>
+      </compileType>
+      <item path=".gitignore" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Entity.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/IndirectConsole.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/InputKeyboard.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Message.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Ship.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/ShipMenu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/ShipPlacer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/ShipSolid.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/iConsole.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/world.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Entity.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/InputKeyboard.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/WindowsConsole.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/entity/Message.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/entity/Ship.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/entity/ShipMenu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/entity/ShipPlacer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/entity/ShipSolid.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/output/IndirectConsole.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/output/WindowsConsole.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/world.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path=".gitignore" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Entity.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/IndirectConsole.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/InputKeyboard.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Message.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Ship.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/ShipMenu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/ShipPlacer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/ShipSolid.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/iConsole.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/world.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Entity.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/InputKeyboard.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/WindowsConsole.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/entity/Message.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/entity/Ship.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/entity/ShipMenu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/entity/ShipPlacer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/entity/ShipSolid.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/output/IndirectConsole.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/output/WindowsConsole.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/world.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
