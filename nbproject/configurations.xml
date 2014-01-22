@@ -34,7 +34,7 @@
       </logicalFolder>
       <logicalFolder name="f1" displayName="output" projectFiles="true">
         <itemPath>src/output/IndirectConsole.cpp</itemPath>
-        <itemPath>include/IndirectConsole.h</itemPath>
+        <itemPath>src/output/IndirectConsole.h</itemPath>
         <itemPath>src/output/WindowsConsole.cpp</itemPath>
         <itemPath>src/WindowsConsole.h</itemPath>
       </logicalFolder>
@@ -78,8 +78,6 @@
       </item>
       <item path="include/Entity.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/IndirectConsole.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="include/InputKeyboard.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/Message.h" ex="false" tool="3" flavor2="0">
@@ -115,6 +113,8 @@
       <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/output/IndirectConsole.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/output/IndirectConsole.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/output/WindowsConsole.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -145,8 +145,6 @@
       </item>
       <item path="include/Entity.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/IndirectConsole.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="include/InputKeyboard.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/Message.h" ex="false" tool="3" flavor2="0">
@@ -182,6 +180,8 @@
       <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/output/IndirectConsole.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/output/IndirectConsole.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/output/WindowsConsole.cpp" ex="false" tool="1" flavor2="0">
       </item>

@@ -19,8 +19,14 @@ IndirectConsole::IndirectConsole(iConsole* con, int x, int y, int w, int h) {
 IndirectConsole::~IndirectConsole() {
 }
 
-void IndirectConsole::setTitle(const char*) {
+int IndirectConsole::getWidth() {
+    return Width;
 }
+
+int IndirectConsole::getHeight() {
+    return Height;
+}
+
 void IndirectConsole::swapBuffers() {
 }
 

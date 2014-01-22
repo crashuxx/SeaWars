@@ -28,23 +28,23 @@ bool ShipPlacer::checkColision() {
 }
 
 void ShipPlacer::update() {
-    if (world->getKeyboard().fetch('a') || world->getKeyboard().fetch('A')) {
+    if (world->getKeyboard()->fetch('a') || world->getKeyboard()->fetch('A')) {
         if ((X - 1) >= 0) X--;
     }
 
-    if (world->getKeyboard().fetch('d') || world->getKeyboard().fetch('D')) {
+    if (world->getKeyboard()->fetch('d') || world->getKeyboard()->fetch('D')) {
         if ((X + 1) < 22 - getWidth()) X++;
     }
 
-    if (world->getKeyboard().fetch('w') || world->getKeyboard().fetch('W')) {
+    if (world->getKeyboard()->fetch('w') || world->getKeyboard()->fetch('W')) {
         if ((Y - 1) >= 0) Y--;
     }
 
-    if (world->getKeyboard().fetch('s') || world->getKeyboard().fetch('S')) {
+    if (world->getKeyboard()->fetch('s') || world->getKeyboard()->fetch('S')) {
         if ((Y + 1) < 14 - getHeight()) Y++;
     }
 
-    if (world->getKeyboard().fetch(0x20)) {
+    if (world->getKeyboard()->fetch(0x20)) {
         dir = !dir;
 
         if (isHorizontal() && X + getWidth() >= 22) {
@@ -56,7 +56,7 @@ void ShipPlacer::update() {
         }
     }
 
-    if (world->getKeyboard().fetch(0x0D)) {
+    if (world->getKeyboard()->fetch(0x0D)) {
         
         if( !checkColision() ) {
             ShipSolid* ship = new ShipSolid(world, length, dir, X, Y);

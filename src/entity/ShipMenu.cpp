@@ -27,15 +27,15 @@ void ShipMenu::update() {
         return;
     }
 
-    if (world->getKeyboard().fetch('w') || world->getKeyboard().fetch('W')) {
+    if (world->getKeyboard()->fetch('w') || world->getKeyboard()->fetch('W')) {
         if ((pos - 1) >= 0) pos--;
     }
 
-    if (world->getKeyboard().fetch('s') || world->getKeyboard().fetch('S')) {
+    if (world->getKeyboard()->fetch('s') || world->getKeyboard()->fetch('S')) {
         if ((pos + 1) <= 3) pos++;
     }
 
-    if (world->getKeyboard().fetch(0x0D) && m[pos] > 0) {
+    if (world->getKeyboard()->fetch(0x0D) && m[pos] > 0) {
         ShipPlacer* ship = new ShipPlacer(world, 4 - pos, 0, this);
         //        world->removeEntity(this);
         world->addEntity(ship);

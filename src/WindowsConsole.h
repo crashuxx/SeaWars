@@ -9,6 +9,9 @@ class WindowsConsole : public iConsole
 public:
 	WindowsConsole();
 	~WindowsConsole();
+        
+        int getWidth();
+        int getHeight();
 
 	void setTitle(const char*);
 	void swapBuffers();

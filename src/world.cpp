@@ -1,15 +1,13 @@
 #include "world.h"
-#include "WindowsConsole.h"
-
 #include "ShipSolid.h"
 #include "ShipPlacer.h"
 #include "ShipMenu.h"
-#include "IndirectConsole.h"
+#include "output/IndirectConsole.h"
 
-World::World() {
-    console = new WindowsConsole();
-    console->setTitle("SeaWars dev");
+#include <windows.h>
 
+World::World(iConsole* con) {
+    console = con;
     addEntity(new ShipMenu(this));
 }
 
@@ -50,19 +48,16 @@ void World::handleAddEntity() {
     entitiesAdd.clear();
 }
 
-void World::paintMap() {
-    
-    int x = 3;
-    int y = 3;
-    
-    for( int i = 0; i < 24; i++ ) {
-        console->write(x + i, y-1, '=', 7);
-        console->write(x + i, y+14, '=', 7);
+void World::paintMap(iConsole& c) {
+
+    for (int i = 0; i < 24; i++) {
+        c.write(i, 0, '=', 7);
+        c.write(i, 15, '=', 7);
     }
 
-    for( int i = 0; i < 14; i++ ) {
-        console->write(x, y+i, '|', 7);
-        console->write(x+23, y+i, '|', 7);
+    for (int i = 0; i < 14; i++) {
+        c.write(0, 1+i, '|', 7);
+        c.write(23, 1+i, '|', 7);
     }
 }
 
@@ -72,9 +67,15 @@ void World::gameLoop() {
     while (running) {
         handleAddEntity();
 
-        getKeyboard().handle();
+        getKeyboard()->handle();
+
+        IndirectConsole* con = new IndirectConsole(console, 3, 2, 24, 16);
+        paintMap((*con));
+        delete con;
         
-        paintMap();
+        con = new IndirectConsole(console, 3 + 8 + 24, 2, 24, 16);
+        paintMap((*con));
+        delete con;
 
         update();
         render();
@@ -82,15 +83,15 @@ void World::gameLoop() {
         console->swapBuffers();
 
         int l = 0;
-        while (running && getKeyboard().has()) {
+        while (running && getKeyboard()->has()) {
 
-            char c = getKeyboard().read();
+            char c = getKeyboard()->read();
             console->write(l++, 0, c, 7);
 
             if (c == 'q') running = false;
         }
 
-        //        sleep(100);
+        Sleep(50);
     }
 }
 
@@ -98,8 +99,8 @@ iConsole* World::getConsole() {
     return new IndirectConsole(console, 4, 3, 22, 14);
 }
 
-InputKeyboard& World::getKeyboard() {
-    return keyboard;
+InputKeyboard* World::getKeyboard() {
+    return &keyboard;
 }
 
 void World::update() {

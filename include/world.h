@@ -10,13 +10,13 @@
 class World
 {
     public:
-        World();
+        World(iConsole*);
         ~World();
 
         void gameLoop();
 
         iConsole* getConsole();
-        InputKeyboard &getKeyboard();
+        InputKeyboard* getKeyboard();
 
         void addEntity(Entity*);
         void removeEntity(Entity*);
@@ -28,7 +28,7 @@ class World
         void handleAddEntity();
         void update();
         void render();
-        void paintMap();
+        void paintMap(iConsole& c);
 
         bool running;
 

@@ -15,6 +15,9 @@ public:
     IndirectConsole(iConsole*, int, int, int, int);
     ~IndirectConsole();
     
+    int getWidth();
+    int getHeight();
+    
     void setTitle(const char*);
     void swapBuffers();
     void writeString(int x, int y, std::string text);

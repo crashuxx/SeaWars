@@ -35,8 +35,8 @@ int Message::getHeight() {
 
 void Message::update() {
 
-    if (world->getKeyboard().has()) {
-        world->getKeyboard().clear();
+    if (world->getKeyboard()->has()) {
+        world->getKeyboard()->clear();
         world->removeEntity(this);
         delete this;
     }

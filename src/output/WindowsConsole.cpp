@@ -31,6 +31,14 @@ WindowsConsole::~WindowsConsole()
 	CloseHandle(hBuffer);
 }
 
+int WindowsConsole::getWidth() {
+    return dwSize.X;
+}
+
+int WindowsConsole::getHeight() {
+    return dwSize.Y;
+}
+
 void WindowsConsole::swapBuffers()
 {
 	COORD dwBufferCoord = {0, 0};

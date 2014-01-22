@@ -3,12 +3,14 @@
 
 #include "world.h"
 
-int main(int argc, char **argv)
-{
-    World world;
-	world.getConsole()->setTitle("SeaWars dev");
+#include "WindowsConsole.h"
 
-	world.gameLoop();
+int main(int argc, char **argv) {
+    WindowsConsole* console = new WindowsConsole();
+    console->setTitle("SeaWars dev");
 
-	return 0;
+    World world(console);
+    world.gameLoop();
+
+    return 0;
 }
