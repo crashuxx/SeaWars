@@ -70,14 +70,6 @@ void World::gameLoop() {
 
         getKeyboard()->handle();
 
-        IndirectConsole* con = new IndirectConsole(console, 3, 2, 24, 16);
-        paintMap((*con));
-        delete con;
-        
-        con = new IndirectConsole(console, 3 + 8 + 24, 2, 24, 16);
-        paintMap((*con));
-        delete con;
-
         update();
         render();
 
@@ -122,6 +114,15 @@ void World::update() {
 }
 
 void World::render() {
+    
+    IndirectConsole* con = new IndirectConsole(console, 3, 2, 24, 16);
+    paintMap((*con));
+    delete con;
+
+    con = new IndirectConsole(console, 3 + 8 + 24, 2, 24, 16);
+    paintMap((*con));
+    delete con;
+    
     std::vector<Entity*>::iterator entitiesIterator = entities.begin();
 
     while (entitiesIterator != entities.end()) {
