@@ -17,6 +17,8 @@ class World
 
         iConsole* getConsole();
         InputKeyboard* getKeyboard();
+        
+        iConsole* getMessageConsole();
 
         void addEntity(Entity*);
         void removeEntity(Entity*);

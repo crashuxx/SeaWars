@@ -99,6 +99,10 @@ iConsole* World::getConsole() {
     return new IndirectConsole(console, 4, 3, 22, 14);
 }
 
+iConsole* World::getMessageConsole() {
+    return new IndirectConsole(console, 3, 2, 22+8+22+4, 16);
+}
+
 InputKeyboard* World::getKeyboard() {
     return &keyboard;
 }

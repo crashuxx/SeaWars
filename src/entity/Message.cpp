@@ -18,11 +18,11 @@ Message::~Message() {
 }
 
 int Message::getX() {
-    return 22 / 2 - (text.size() / 2) - 2;
+    return 0 - (text.size() / 2) - 2;
 }
 
 int Message::getY() {
-    return 14 / 2 - 1;
+    return 0;
 }
 
 int Message::getWidth() {
@@ -44,18 +44,24 @@ void Message::update() {
 
 void Message::render() {
 
-    iConsole* c = world->getConsole();
+    iConsole* c = world->getMessageConsole();
+    
+    int size = text.size()+4;
+    
+    int x = (c->getWidth()/2)-(size/2);
+    int y = (c->getHeight()/2)-1;
 
-    int size = text.size();
-    for (int i = -1; i <= size + 1; i++) {
-        c->write(getX() + i, getY() - 1, '-', 26);
-        c->write(getX() + i, getY(), ' ', 26);
-        c->write(getX() + i, getY() + 1, '-', 26);
+    for (int i = -1; i < size+1; i++) {
+        c->write(x + i, y - 1, '-', 26);
+        c->write(x + i, y, ' ', 26);
+        c->write(x + i, y + 1, '-', 26);
     }
 
-    c->write(getX() - 1, getY(), '|', 28);
-    c->write(getX() + size + 1, getY(), '|', 28);
-    c->writeString(getX(), getY(), text, 31);
+    c->write(x - 1, y, '|', 28);
+    c->write(x + size, y, '|', 28);
+    c->writeString(x+1, y, text, 31);
+    
+    delete c;
 }
 
 bool Message::isSolid() {
