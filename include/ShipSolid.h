@@ -14,6 +14,8 @@ class ShipSolid : public Ship
         bool isSolid();
         
         bool collidesWith(Entity* entity);
+        
+        int hit(int x, int y);
     protected:
     private:
 };

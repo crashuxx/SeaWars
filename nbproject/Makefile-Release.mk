@@ -37,11 +37,15 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/src/Entity.o \
 	${OBJECTDIR}/src/InputKeyboard.o \
+	${OBJECTDIR}/src/Net.o \
+	${OBJECTDIR}/src/NetClient.o \
+	${OBJECTDIR}/src/NetServer.o \
 	${OBJECTDIR}/src/entity/Message.o \
 	${OBJECTDIR}/src/entity/Ship.o \
 	${OBJECTDIR}/src/entity/ShipMenu.o \
 	${OBJECTDIR}/src/entity/ShipPlacer.o \
 	${OBJECTDIR}/src/entity/ShipSolid.o \
+	${OBJECTDIR}/src/entity/Targeting.o \
 	${OBJECTDIR}/src/main.o \
 	${OBJECTDIR}/src/output/IndirectConsole.o \
 	${OBJECTDIR}/src/output/WindowsConsole.o \
@@ -62,7 +66,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=-lws2_32
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -75,57 +79,77 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/seawars.exe: ${OBJECTFILES}
 ${OBJECTDIR}/src/Entity.o: src/Entity.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Entity.o src/Entity.cpp
+	$(COMPILE.cc) -O2 -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Entity.o src/Entity.cpp
 
 ${OBJECTDIR}/src/InputKeyboard.o: src/InputKeyboard.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/InputKeyboard.o src/InputKeyboard.cpp
+	$(COMPILE.cc) -O2 -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/InputKeyboard.o src/InputKeyboard.cpp
+
+${OBJECTDIR}/src/Net.o: src/Net.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Net.o src/Net.cpp
+
+${OBJECTDIR}/src/NetClient.o: src/NetClient.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/NetClient.o src/NetClient.cpp
+
+${OBJECTDIR}/src/NetServer.o: src/NetServer.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/NetServer.o src/NetServer.cpp
 
 ${OBJECTDIR}/src/entity/Message.o: src/entity/Message.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/entity
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/entity/Message.o src/entity/Message.cpp
+	$(COMPILE.cc) -O2 -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/entity/Message.o src/entity/Message.cpp
 
 ${OBJECTDIR}/src/entity/Ship.o: src/entity/Ship.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/entity
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/entity/Ship.o src/entity/Ship.cpp
+	$(COMPILE.cc) -O2 -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/entity/Ship.o src/entity/Ship.cpp
 
 ${OBJECTDIR}/src/entity/ShipMenu.o: src/entity/ShipMenu.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/entity
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/entity/ShipMenu.o src/entity/ShipMenu.cpp
+	$(COMPILE.cc) -O2 -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/entity/ShipMenu.o src/entity/ShipMenu.cpp
 
 ${OBJECTDIR}/src/entity/ShipPlacer.o: src/entity/ShipPlacer.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/entity
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/entity/ShipPlacer.o src/entity/ShipPlacer.cpp
+	$(COMPILE.cc) -O2 -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/entity/ShipPlacer.o src/entity/ShipPlacer.cpp
 
 ${OBJECTDIR}/src/entity/ShipSolid.o: src/entity/ShipSolid.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/entity
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/entity/ShipSolid.o src/entity/ShipSolid.cpp
+	$(COMPILE.cc) -O2 -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/entity/ShipSolid.o src/entity/ShipSolid.cpp
+
+${OBJECTDIR}/src/entity/Targeting.o: src/entity/Targeting.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/entity
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/entity/Targeting.o src/entity/Targeting.cpp
 
 ${OBJECTDIR}/src/main.o: src/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
+	$(COMPILE.cc) -O2 -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
 
 ${OBJECTDIR}/src/output/IndirectConsole.o: src/output/IndirectConsole.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/output
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/output/IndirectConsole.o src/output/IndirectConsole.cpp
+	$(COMPILE.cc) -O2 -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/output/IndirectConsole.o src/output/IndirectConsole.cpp
 
 ${OBJECTDIR}/src/output/WindowsConsole.o: src/output/WindowsConsole.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/output
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/output/WindowsConsole.o src/output/WindowsConsole.cpp
+	$(COMPILE.cc) -O2 -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/output/WindowsConsole.o src/output/WindowsConsole.cpp
 
 ${OBJECTDIR}/src/world.o: src/world.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/world.o src/world.cpp
+	$(COMPILE.cc) -O2 -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/world.o src/world.cpp
 
 # Subprojects
 .build-subprojects:

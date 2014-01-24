@@ -4,6 +4,7 @@
 #include "iConsole.h"
 #include "InputKeyboard.h"
 #include "Entity.h"
+#include "Net.h"
 
 #include <vector>
 
@@ -25,13 +26,30 @@ class World
         void removeEntity(Entity*);
         
         std::vector<Entity*> getAllEntity();
+        
+        void hitSpot(int x, int y);
+        bool checkSpot(int x, int y);
+                
+        void ready();
+        
+        void giveControlToEnemy();
 
     protected:
     private:
+        Net& getNet();
+        
+        int imReady;
+        int enemyReady;
+        
         void handleAddEntity();
+        
+        void handleNetwork();
+        void handleNetCommands(std::vector<std::string>&);
+        
         void update();
         void render();
         void paintMap(iConsole& c);
+        void paintHitSpots();
 
         bool running;
 
@@ -39,8 +57,16 @@ class World
         
         std::vector<Entity*> entitiesAdd;
         
+        char hitSpotsMap[22][14];
         iConsole* console;
         InputKeyboard keyboard;
+        
+        Net* net;
+        
+        Entity* targeting;
+        int move;
+        
+        void ignition();
 };
 
 #endif // WORLD_H

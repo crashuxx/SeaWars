@@ -37,11 +37,15 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/src/Entity.o \
 	${OBJECTDIR}/src/InputKeyboard.o \
+	${OBJECTDIR}/src/Net.o \
+	${OBJECTDIR}/src/NetClient.o \
+	${OBJECTDIR}/src/NetServer.o \
 	${OBJECTDIR}/src/entity/Message.o \
 	${OBJECTDIR}/src/entity/Ship.o \
 	${OBJECTDIR}/src/entity/ShipMenu.o \
 	${OBJECTDIR}/src/entity/ShipPlacer.o \
 	${OBJECTDIR}/src/entity/ShipSolid.o \
+	${OBJECTDIR}/src/entity/Targeting.o \
 	${OBJECTDIR}/src/main.o \
 	${OBJECTDIR}/src/output/IndirectConsole.o \
 	${OBJECTDIR}/src/output/WindowsConsole.o \
@@ -62,7 +66,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=-lws2_32
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -81,6 +85,21 @@ ${OBJECTDIR}/src/InputKeyboard.o: src/InputKeyboard.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/InputKeyboard.o src/InputKeyboard.cpp
+
+${OBJECTDIR}/src/Net.o: src/Net.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Net.o src/Net.cpp
+
+${OBJECTDIR}/src/NetClient.o: src/NetClient.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/NetClient.o src/NetClient.cpp
+
+${OBJECTDIR}/src/NetServer.o: src/NetServer.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/NetServer.o src/NetServer.cpp
 
 ${OBJECTDIR}/src/entity/Message.o: src/entity/Message.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/entity
@@ -106,6 +125,11 @@ ${OBJECTDIR}/src/entity/ShipSolid.o: src/entity/ShipSolid.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/entity
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/entity/ShipSolid.o src/entity/ShipSolid.cpp
+
+${OBJECTDIR}/src/entity/Targeting.o: src/entity/Targeting.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/entity
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/entity/Targeting.o src/entity/Targeting.cpp
 
 ${OBJECTDIR}/src/main.o: src/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

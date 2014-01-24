@@ -5,6 +5,7 @@ ShipSolid::ShipSolid(World* world, int length, int dir, int X, int Y) : Ship(wor
     this->X = X;
     this->Y = Y;
     baseColor = 12;
+    type = Entity::SHIP;
 }
 
 ShipSolid::~ShipSolid() {
@@ -16,6 +17,16 @@ bool ShipSolid::isSolid() {
 }
 
 void ShipSolid::update() {
+}
+
+int ShipSolid::hit(int x, int y) {
+    
+    if( x >= X && x <= X+getWidth() &&
+        y >= Y && y <= Y+getHeight() ) {
+        return 1;
+    }
+    
+    return 0;
 }
 
 bool ShipSolid::collidesWith(Entity* entity) {

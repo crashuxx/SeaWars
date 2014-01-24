@@ -10,12 +10,14 @@
         <itemPath>include/ShipMenu.h</itemPath>
         <itemPath>include/ShipPlacer.h</itemPath>
         <itemPath>include/ShipSolid.h</itemPath>
+        <itemPath>include/Targeting.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="output" projectFiles="true">
         <itemPath>include/iConsole.h</itemPath>
       </logicalFolder>
       <itemPath>include/Entity.h</itemPath>
       <itemPath>include/InputKeyboard.h</itemPath>
+      <itemPath>include/Net.h</itemPath>
       <itemPath>include/world.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -31,6 +33,7 @@
         <itemPath>src/entity/ShipMenu.cpp</itemPath>
         <itemPath>src/entity/ShipPlacer.cpp</itemPath>
         <itemPath>src/entity/ShipSolid.cpp</itemPath>
+        <itemPath>src/entity/Targeting.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="output" projectFiles="true">
         <itemPath>src/output/IndirectConsole.cpp</itemPath>
@@ -40,6 +43,11 @@
       </logicalFolder>
       <itemPath>src/Entity.cpp</itemPath>
       <itemPath>src/InputKeyboard.cpp</itemPath>
+      <itemPath>src/Net.cpp</itemPath>
+      <itemPath>src/NetClient.cpp</itemPath>
+      <itemPath>src/NetClient.h</itemPath>
+      <itemPath>src/NetServer.cpp</itemPath>
+      <itemPath>src/NetServer.h</itemPath>
       <itemPath>src/main.cpp</itemPath>
       <itemPath>src/world.cpp</itemPath>
     </logicalFolder>
@@ -73,6 +81,11 @@
             <pElem>include</pElem>
           </incDir>
         </ccTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibLibItem>ws2_32</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
       <item path=".gitignore" ex="false" tool="3" flavor2="0">
       </item>
@@ -82,6 +95,8 @@
       </item>
       <item path="include/Message.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/Net.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/Ship.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/ShipMenu.h" ex="false" tool="3" flavor2="0">
@@ -90,6 +105,8 @@
       </item>
       <item path="include/ShipSolid.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/Targeting.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/iConsole.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/world.h" ex="false" tool="3" flavor2="0">
@@ -97,6 +114,16 @@
       <item path="src/Entity.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/InputKeyboard.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Net.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/NetClient.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/NetClient.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/NetServer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/NetServer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/WindowsConsole.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -109,6 +136,8 @@
       <item path="src/entity/ShipPlacer.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/entity/ShipSolid.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/entity/Targeting.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -133,6 +162,9 @@
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>
@@ -140,6 +172,11 @@
         <asmTool>
           <developmentMode>5</developmentMode>
         </asmTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibLibItem>ws2_32</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
       <item path=".gitignore" ex="false" tool="3" flavor2="0">
       </item>
@@ -149,6 +186,8 @@
       </item>
       <item path="include/Message.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/Net.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/Ship.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/ShipMenu.h" ex="false" tool="3" flavor2="0">
@@ -157,6 +196,8 @@
       </item>
       <item path="include/ShipSolid.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/Targeting.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/iConsole.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/world.h" ex="false" tool="3" flavor2="0">
@@ -164,6 +205,16 @@
       <item path="src/Entity.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/InputKeyboard.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Net.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/NetClient.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/NetClient.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/NetServer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/NetServer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/WindowsConsole.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -176,6 +227,8 @@
       <item path="src/entity/ShipPlacer.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/entity/ShipSolid.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/entity/Targeting.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
       </item>

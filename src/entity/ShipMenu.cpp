@@ -9,9 +9,9 @@ ShipMenu::ShipMenu(World* world) {
     enabled = true;
 
     m[0] = 1;
-    m[1] = 2;
-    m[2] = 3;
-    m[3] = 4;
+    m[1] = 0;
+    m[2] = 0;
+    m[3] = 0;
 }
 
 ShipMenu::~ShipMenu() {
@@ -24,6 +24,17 @@ bool ShipMenu::isSolid() {
 
 void ShipMenu::update() {
     if (!enabled) {
+        return;
+    }
+    
+    bool all = true;
+    for(int i=0 ; i < 4; i++) {
+        if(m[i] > 0) all = false;
+    }
+    
+    if( all ) {
+        enabled = false;
+        world->ready();
         return;
     }
 
@@ -84,16 +95,6 @@ void ShipMenu::render() {
 
 void ShipMenu::enable() {
     enabled = true;
-
-    bool empty = true;
-    for (int i = 0; i < 4; i++) {
-        if (m[i] > 0) empty = false;
-    }
-    
-    if( empty ) {
-        world->removeEntity(this);
-        delete this;
-    }
 }
 
 bool ShipMenu::collidesWith(Entity* entity) {

@@ -4,6 +4,8 @@
 class Entity
 {
     public:
+        enum etype {NONE, SHIP}; 
+        
         virtual ~Entity() {};
 
         virtual int getX();
@@ -13,12 +15,15 @@ class Entity
 
         virtual void update() = 0;
         virtual void render() = 0;
-        virtual bool isSolid() = 0;
 
         virtual bool collidesWith(Entity* entity) = 0;
+        
+        Entity::etype getType();
 
     protected:
         Entity();
+        
+        Entity::etype type;
 
         int X;
         int Y;
